@@ -1,0 +1,142 @@
+<!--<%@page import="javax.swing.JOptionPane"%>-->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+<!--       <script>
+        function showResult(result) {
+            alert(result); // You can also use a modal here instead of alert
+        }
+    </script>-->
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz App</h1>
+         <!--<form action="quizjscode.js " method="post">-->
+        <div class="question">
+            <p>Question 1: Which of the following corresponds to "ek bataa do"?</p>
+            <label><input type="radio" name="q1" value="a"> Pura</label><br>
+            <label><input type="radio" name="q1" value="b"> Sawa</label><br>
+            <label><input type="radio" name="q1" value="c"> Adha</label><br>
+            <label><input type="radio" name="q1" value="d"> Pauna</label><br>
+        </div>
+        
+        <div class="question">
+            <p>Question 2: Which of the following gods is also known as "Gauri Nandan"?</p>
+            <label><input type="radio" name="q2" value="a"> Agni</label><br>
+            <label><input type="radio" name="q2" value="b"> Indra</label><br>
+            <label><input type="radio" name="q2" value="c"> Hanuman</label><br>
+            <label><input type="radio" name="q2" value="d"> Ganesha</label><br>
+        </div>
+
+        <div class="question">
+            <p>Question 3: In the game of ludo, the discs or tokens are of how many colors?</p>
+            <label><input type="radio" name="q3" value="a"> One</label><br>
+            <label><input type="radio" name="q3" value="b"> Two</label><br>
+            <label><input type="radio" name="q3" value="c"> Three</label><br>
+            <label><input type="radio" name="q3" value="d"> Four</label><br>
+        </div>
+
+        <div class="question">
+            <p>Question 4: Which of these are names of national parks located in Madhya Pradesh?</p>
+            <label><input type="radio" name="q4" value="a"> Krishna and Kanhaiya</label><br>
+            <label><input type="radio" name="q4" value="b"> Kanha and Madhav</label><br>
+            <label><input type="radio" name="q4" value="c"> Ghanshyam and Murari</label><br>
+            <label><input type="radio" name="q4" value="d"> Girdhar and Gopal</label><br>
+        </div>
+
+        <div class="question">
+            <p>Question 5: Who wrote the introduction to the English translation of Rabindranath Tagore's Gitanjali?</p>
+            <label><input type="radio" name="q5" value="a"> P.B. Shelley</label><br>
+            <label><input type="radio" name="q5" value="b"> Alfred Tennyson</label><br>
+            <label><input type="radio" name="q5" value="c"> W.B. Yeats</label><br>
+            <label><input type="radio" name="q5" value="d"> T.S. Eliot</label><br>
+        </div>
+
+        <div class="question">
+            <p>Question 6: Which of these leaders was a recipient of a gallantry award in 1987 by a state government for saving two girls from drowning?</p>
+            <label><input type="radio" name="q6" value="a"> Anandiben Patel</label><br>
+            <label><input type="radio" name="q6" value="b"> Vasundhara Raje Scindia</label><br>
+            <label><input type="radio" name="q6" value="c"> Uma Bharti</label><br>
+            <label><input type="radio" name="q6" value="d"> Mamata Banerjee</label><br>
+        </div>
+
+        <div class="question">
+            <p>Question 7: The wife of which of these famous sports persons was once captain of the Indian volleyball team?</p>
+            <label><input type="radio" name="q7" value="a"> K.D. Jadav</label><br>
+            <label><input type="radio" name="q7" value="b"> Dhyan Chand</label><br>
+            <label><input type="radio" name="q7" value="c"> Prakash Padukone</label><br>
+            <label><input type="radio" name="q7" value="d"> Milkha Singh</label><br>
+        </div>
+
+        <div class="question">
+            <p>Question 8: Which battle in 1757 marked the beginning of British occupation in India?</p>
+            <label><input type="radio" name="q8" value="a"> Plassey</label><br>
+            <label><input type="radio" name="q8" value="b"> Assaye</label><br>
+            <label><input type="radio" name="q8" value="c"> Buxar</label><br>
+            <label><input type="radio" name="q8" value="d"> Cuddalore</label><br>
+        </div>
+
+        <div class="question">
+            <p>Question 9: Who among the following wrote Sanskrit grammar?</p>
+            <label><input type="radio" name="q9" value="a"> Kalidasa</label><br>
+            <label><input type="radio" name="q9" value="b"> Charak</label><br>
+            <label><input type="radio" name="q9" value="c"> Panini</label><br>
+            <label><input type="radio" name="q9" value="d"> Aryabhatt</label><br>
+        </div>
+
+        <div class="question">
+            <p>Question 10: Which of these leaders was a recipient of a gallantry award in 1987 by a state government for saving two girls from drowning?</p>
+            <label><input type="radio" name="q10" value="a"> Anandiben Patel</label><br>
+            <label><input type="radio" name="q10" value="b"> Vasundhara Raje Scindia</label><br>
+            <label><input type="radio" name="q10" value="c"> Uma Bharti</label><br>
+            <label><input type="radio" name="q10" value="c"> Uma Bharti</label><br>
+        </div>
+             
+             <!--<button type="submit" class="button">Submit</button>-->
+             
+             
+         <!--</form>-->
+        </div>
+    
+     <button id="submit-btn" class="button">Submit</button>
+    
+   
+
+    <script>
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            let score = 0;
+
+            // Check each question's answer
+            const answers = ['c', 'c', 'd', 'b', 'c', 'a', 'd', 'a', 'c', 'a'];
+            for (let i = 1; i <= 10; i++) {
+                const selectedOption = document.querySelector('input[name="q' + i + '"]:checked');
+                if (selectedOption !== null && selectedOption.value === answers[i - 1]) {
+                    score++;
+                }
+            }
+
+            // Determine pass or fail
+            let result;
+            if (score >= 5) {
+//                result = "Pass";
+//               alert("Your score: " + score + "/10. You " + result + " the quiz."+"PASS");
+                alert("PASS");
+            } else {
+//                result = "Fail";
+//                  alert("Your score: " + score + "/10. You " + result + " the quiz."+"not clear the test ok");
+                   alert("Not clear the test ok");
+            }
+
+            // Show result
+           
+        });
+    </script>
+         
+</body>
+</html>
+
